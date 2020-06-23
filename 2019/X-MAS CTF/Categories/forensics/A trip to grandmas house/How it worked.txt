@@ -1,0 +1,5 @@
+First hack into Win98 machine (deleted because was too large)
+Then read desktop icon arrangement as a password for an encrypted file.
+Open encrypted file in decryption program in win98 and extract its contents which was a minecraft world
+Extract world from VDI with 7-zip
+Open world in MCEdit and find key as blocks when viewed from the sky

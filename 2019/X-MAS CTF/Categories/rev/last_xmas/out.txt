@@ -1,0 +1,938 @@
+
+LAST_XMAS:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000442070 <.data+0x42070>:
+  442070:	50                   	push   rax
+  442071:	52                   	push   rdx
+  442072:	e8 c8 02 00 00       	call   0x44233f
+  442077:	55                   	push   rbp
+  442078:	53                   	push   rbx
+  442079:	51                   	push   rcx
+  44207a:	52                   	push   rdx
+  44207b:	48 01 fe             	add    rsi,rdi
+  44207e:	56                   	push   rsi
+  44207f:	48 89 fe             	mov    rsi,rdi
+  442082:	48 89 d7             	mov    rdi,rdx
+  442085:	31 db                	xor    ebx,ebx
+  442087:	31 c9                	xor    ecx,ecx
+  442089:	48 83 cd ff          	or     rbp,0xffffffffffffffff
+  44208d:	e8 50 00 00 00       	call   0x4420e2
+  442092:	01 db                	add    ebx,ebx
+  442094:	74 02                	je     0x442098
+  442096:	f3 c3                	repz ret 
+  442098:	8b 1e                	mov    ebx,DWORD PTR [rsi]
+  44209a:	48 83 ee fc          	sub    rsi,0xfffffffffffffffc
+  44209e:	11 db                	adc    ebx,ebx
+  4420a0:	8a 16                	mov    dl,BYTE PTR [rsi]
+  4420a2:	f3 c3                	repz ret 
+  4420a4:	48 8d 04 2f          	lea    rax,[rdi+rbp*1]
+  4420a8:	83 f9 05             	cmp    ecx,0x5
+  4420ab:	8a 10                	mov    dl,BYTE PTR [rax]
+  4420ad:	76 21                	jbe    0x4420d0
+  4420af:	48 83 fd fc          	cmp    rbp,0xfffffffffffffffc
+  4420b3:	77 1b                	ja     0x4420d0
+  4420b5:	83 e9 04             	sub    ecx,0x4
+  4420b8:	8b 10                	mov    edx,DWORD PTR [rax]
+  4420ba:	48 83 c0 04          	add    rax,0x4
+  4420be:	83 e9 04             	sub    ecx,0x4
+  4420c1:	89 17                	mov    DWORD PTR [rdi],edx
+  4420c3:	48 8d 7f 04          	lea    rdi,[rdi+0x4]
+  4420c7:	73 ef                	jae    0x4420b8
+  4420c9:	83 c1 04             	add    ecx,0x4
+  4420cc:	8a 10                	mov    dl,BYTE PTR [rax]
+  4420ce:	74 10                	je     0x4420e0
+  4420d0:	48 ff c0             	inc    rax
+  4420d3:	88 17                	mov    BYTE PTR [rdi],dl
+  4420d5:	83 e9 01             	sub    ecx,0x1
+  4420d8:	8a 10                	mov    dl,BYTE PTR [rax]
+  4420da:	48 8d 7f 01          	lea    rdi,[rdi+0x1]
+  4420de:	75 f0                	jne    0x4420d0
+  4420e0:	f3 c3                	repz ret 
+  4420e2:	fc                   	cld    
+  4420e3:	41 5b                	pop    r11
+  4420e5:	41 80 f8 08          	cmp    r8b,0x8
+  4420e9:	74 0d                	je     0x4420f8
+  4420eb:	e9 ac 00 00 00       	jmp    0x44219c
+  4420f0:	48 ff c6             	inc    rsi
+  4420f3:	88 17                	mov    BYTE PTR [rdi],dl
+  4420f5:	48 ff c7             	inc    rdi
+  4420f8:	8a 16                	mov    dl,BYTE PTR [rsi]
+  4420fa:	01 db                	add    ebx,ebx
+  4420fc:	75 0a                	jne    0x442108
+  4420fe:	8b 1e                	mov    ebx,DWORD PTR [rsi]
+  442100:	48 83 ee fc          	sub    rsi,0xfffffffffffffffc
+  442104:	11 db                	adc    ebx,ebx
+  442106:	8a 16                	mov    dl,BYTE PTR [rsi]
+  442108:	72 e6                	jb     0x4420f0
+  44210a:	8d 41 01             	lea    eax,[rcx+0x1]
+  44210d:	eb 07                	jmp    0x442116
+  44210f:	ff c8                	dec    eax
+  442111:	41 ff d3             	call   r11
+  442114:	11 c0                	adc    eax,eax
+  442116:	41 ff d3             	call   r11
+  442119:	11 c0                	adc    eax,eax
+  44211b:	01 db                	add    ebx,ebx
+  44211d:	75 0a                	jne    0x442129
+  44211f:	8b 1e                	mov    ebx,DWORD PTR [rsi]
+  442121:	48 83 ee fc          	sub    rsi,0xfffffffffffffffc
+  442125:	11 db                	adc    ebx,ebx
+  442127:	8a 16                	mov    dl,BYTE PTR [rsi]
+  442129:	73 e4                	jae    0x44210f
+  44212b:	83 e8 03             	sub    eax,0x3
+  44212e:	72 1d                	jb     0x44214d
+  442130:	c1 e0 08             	shl    eax,0x8
+  442133:	0f b6 d2             	movzx  edx,dl
+  442136:	09 d0                	or     eax,edx
+  442138:	48 ff c6             	inc    rsi
+  44213b:	83 f0 ff             	xor    eax,0xffffffff
+  44213e:	0f 84 58 00 00 00    	je     0x44219c
+  442144:	d1 f8                	sar    eax,1
+  442146:	48 63 e8             	movsxd rbp,eax
+  442149:	72 38                	jb     0x442183
+  44214b:	eb 0e                	jmp    0x44215b
+  44214d:	01 db                	add    ebx,ebx
+  44214f:	75 08                	jne    0x442159
+  442151:	8b 1e                	mov    ebx,DWORD PTR [rsi]
+  442153:	48 83 ee fc          	sub    rsi,0xfffffffffffffffc
+  442157:	11 db                	adc    ebx,ebx
+  442159:	72 28                	jb     0x442183
+  44215b:	ff c1                	inc    ecx
+  44215d:	01 db                	add    ebx,ebx
+  44215f:	75 08                	jne    0x442169
+  442161:	8b 1e                	mov    ebx,DWORD PTR [rsi]
+  442163:	48 83 ee fc          	sub    rsi,0xfffffffffffffffc
+  442167:	11 db                	adc    ebx,ebx
+  442169:	72 18                	jb     0x442183
+  44216b:	41 ff d3             	call   r11
+  44216e:	11 c9                	adc    ecx,ecx
+  442170:	01 db                	add    ebx,ebx
+  442172:	75 08                	jne    0x44217c
+  442174:	8b 1e                	mov    ebx,DWORD PTR [rsi]
+  442176:	48 83 ee fc          	sub    rsi,0xfffffffffffffffc
+  44217a:	11 db                	adc    ebx,ebx
+  44217c:	73 ed                	jae    0x44216b
+  44217e:	83 c1 02             	add    ecx,0x2
+  442181:	eb 05                	jmp    0x442188
+  442183:	41 ff d3             	call   r11
+  442186:	11 c9                	adc    ecx,ecx
+  442188:	48 81 fd 00 fb ff ff 	cmp    rbp,0xfffffffffffffb00
+  44218f:	83 d1 02             	adc    ecx,0x2
+  442192:	e8 0d ff ff ff       	call   0x4420a4
+  442197:	e9 5c ff ff ff       	jmp    0x4420f8
+  44219c:	59                   	pop    rcx
+  44219d:	48 89 f0             	mov    rax,rsi
+  4421a0:	48 29 c8             	sub    rax,rcx
+  4421a3:	5a                   	pop    rdx
+  4421a4:	48 29 d7             	sub    rdi,rdx
+  4421a7:	59                   	pop    rcx
+  4421a8:	89 39                	mov    DWORD PTR [rcx],edi
+  4421aa:	5b                   	pop    rbx
+  4421ab:	5d                   	pop    rbp
+  4421ac:	c3                   	ret    
+  4421ad:	68 1e 00 00 00       	push   0x1e
+  4421b2:	5a                   	pop    rdx
+  4421b3:	e8 bc 00 00 00       	call   0x442274
+  4421b8:	50                   	push   rax
+  4421b9:	52                   	push   rdx
+  4421ba:	4f 54                	rex.WRXB push r12
+  4421bc:	5f                   	pop    rdi
+  4421bd:	45 58                	rex.RB pop r8
+  4421bf:	45                   	rex.RB
+  4421c0:	43 7c 50             	rex.XB jl 0x442213
+  4421c3:	52                   	push   rdx
+  4421c4:	4f 54                	rex.WRXB push r12
+  4421c6:	5f                   	pop    rdi
+  4421c7:	57                   	push   rdi
+  4421c8:	52                   	push   rdx
+  4421c9:	49 54                	rex.WB push r12
+  4421cb:	45 20 66 61          	and    BYTE PTR [r14+0x61],r12b
+  4421cf:	69 6c 65 64 2e 0a 00 	imul   ebp,DWORD PTR [rbp+riz*2+0x64],0xa000a2e
+  4421d6:	0a 
+  4421d7:	00 7c 04 2f          	add    BYTE PTR [rsp+rax*1+0x2f],bh
+  4421db:	35 37 77 61 07       	xor    eax,0x7617737
+  4421e0:	30 24 32             	xor    BYTE PTR [rdx+rsi*1],ah
+  4421e3:	73 3e                	jae    0x442223
+  4421e5:	24 2d                	and    al,0x2d
+  4421e7:	36 78 24             	ss js  0x44220e
+  4421ea:	32 73 28             	xor    dh,BYTE PTR [rbx+0x28]
+  4421ed:	2c 22                	sub    al,0x22
+  4421ef:	38 3d 29 61 24 31    	cmp    BYTE PTR [rip+0x31246129],bh        # 0x3168831e
+  4421f5:	39 29                	cmp    DWORD PTR [rcx],ebp
+  4421f7:	73 2c                	jae    0x442225
+  4421f9:	25 24 73 0d 1d       	and    eax,0x1d0d7324
+  4421fe:	19 73 3d             	sbb    DWORD PTR [rbx+0x3d],esi
+  442201:	35 24 30 2d 39       	xor    eax,0x392d3024
+  442206:	20 31                	and    BYTE PTR [rcx],dh
+  442208:	34 28                	xor    al,0x28
+  44220a:	61                   	(bad)  
+  44220b:	23 39                	and    edi,DWORD PTR [rcx]
+  44220d:	2e 2a 36             	sub    dh,BYTE PTR cs:[rsi]
+  442210:	2a 6d 29             	sub    ch,BYTE PTR [rbp+0x29]
+  442213:	27                   	(bad)  
+  442214:	2c 3d                	sub    al,0x3d
+  442216:	7b 7c                	jnp    0x442294
+  442218:	77 38                	ja     0x442252
+  44221a:	31 2b                	xor    DWORD PTR [rbx],ebp
+  44221c:	76 3e                	jbe    0x44225c
+  44221e:	27                   	(bad)  
+  44221f:	7d 36                	jge    0x442257
+  442221:	28 35 73 7c 47 41    	sub    BYTE PTR [rip+0x41477c73],dh        # 0x418b9e9a
+  442227:	77 11                	ja     0x44223a
+  442229:	29 7b 73             	sub    DWORD PTR [rbx+0x73],edi
+  44222c:	0d 1d 19 73 6b       	or     eax,0x6b73191d
+  442231:	63 78 66             	movsxd edi,DWORD PTR [rax+0x66]
+  442234:	78 0e                	js     0x442244
+  442236:	2e 23 21             	and    esp,DWORD PTR cs:[rcx]
+  442239:	3f                   	(bad)  
+  44223a:	28 34 30             	sub    BYTE PTR [rax+rsi*1],dh
+  44223d:	39 61 7b             	cmp    DWORD PTR [rcx+0x7b],esp
+  442240:	1b 64 61 62          	sbb    esp,DWORD PTR [rcx+riz*2+0x62]
+  442244:	61                   	(bad)  
+  442245:	74 77                	je     0x4422be
+  442247:	7e 6a                	jle    0x4422b3
+  442249:	7d 70                	jge    0x4422bb
+  44224b:	6b 78 39 29          	imul   edi,DWORD PTR [rax+0x39],0x29
+  44224f:	36 78 18             	ss js  0x44226a
+  442252:	11 0b                	adc    DWORD PTR [rbx],ecx
+  442254:	78 19                	js     0x44226f
+  442256:	24 32                	and    al,0x32
+  442258:	35 63 61 12 34       	xor    eax,0x34126163
+  44225d:	21 61 01             	and    DWORD PTR [rcx+0x1],esp
+  442260:	31 2a                	xor    DWORD PTR [rdx],ebp
+  442262:	29 27                	sub    DWORD PTR [rdi],esp
+  442264:	2b 6d 13             	sub    ebp,DWORD PTR [rbp+0x13]
+  442267:	36 2b 28             	sub    ebp,DWORD PTR ss:[rax]
+  44226a:	33 25 3d 29 6f 73    	xor    esp,DWORD PTR [rip+0x736f293d]        # 0x73b34bad
+  442270:	7c 0a                	jl     0x44227c
+  442272:	00 90 5e 6a 02 5f    	add    BYTE PTR [rax+0x5f026a5e],dl
+  442278:	6a 01                	push   0x1
+  44227a:	58                   	pop    rax
+  44227b:	0f 05                	syscall 
+  44227d:	6a 7f                	push   0x7f
+  44227f:	5f                   	pop    rdi
+  442280:	6a 3c                	push   0x3c
+  442282:	58                   	pop    rax
+  442283:	0f 05                	syscall 
+  442285:	5f                   	pop    rdi
+  442286:	29 f6                	sub    esi,esi
+  442288:	6a 02                	push   0x2
+  44228a:	58                   	pop    rax
+  44228b:	0f 05                	syscall 
+  44228d:	50                   	push   rax
+  44228e:	48 8d b7 0f 00 00 00 	lea    rsi,[rdi+0xf]
+  442295:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  442296:	83 e0 fe             	and    eax,0xfffffffe
+  442299:	41 89 c6             	mov    r14d,eax
+  44229c:	56                   	push   rsi
+  44229d:	5b                   	pop    rbx
+  44229e:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  44229f:	92                   	xchg   edx,eax
+  4422a0:	48 01 da             	add    rdx,rbx
+  4422a3:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  4422a4:	41 95                	xchg   r13d,eax
+  4422a6:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  4422a7:	49 01 f5             	add    r13,rsi
+  4422aa:	48 8d 8d f5 ff ff ff 	lea    rcx,[rbp-0xb]
+  4422b1:	44 8b 39             	mov    r15d,DWORD PTR [rcx]
+  4422b4:	4c 29 f9             	sub    rcx,r15
+  4422b7:	45 29 f7             	sub    r15d,r14d
+  4422ba:	5f                   	pop    rdi
+  4422bb:	48 29 ca             	sub    rdx,rcx
+  4422be:	52                   	push   rdx
+  4422bf:	50                   	push   rax
+  4422c0:	49 29 cd             	sub    r13,rcx
+  4422c3:	57                   	push   rdi
+  4422c4:	51                   	push   rcx
+  4422c5:	4d 29 c9             	sub    r9,r9
+  4422c8:	41 83 c8 ff          	or     r8d,0xffffffff
+  4422cc:	6a 22                	push   0x22
+  4422ce:	41 5a                	pop    r10
+  4422d0:	52                   	push   rdx
+  4422d1:	5e                   	pop    rsi
+  4422d2:	6a 03                	push   0x3
+  4422d4:	5a                   	pop    rdx
+  4422d5:	29 ff                	sub    edi,edi
+  4422d7:	6a 09                	push   0x9
+  4422d9:	58                   	pop    rax
+  4422da:	0f 05                	syscall 
+  4422dc:	49 01 c6             	add    r14,rax
+  4422df:	48 89 44 24 10       	mov    QWORD PTR [rsp+0x10],rax
+  4422e4:	48 97                	xchg   rdi,rax
+  4422e6:	44 8b 44 24 08       	mov    r8d,DWORD PTR [rsp+0x8]
+  4422eb:	6a 12                	push   0x12
+  4422ed:	41 5a                	pop    r10
+  4422ef:	4c 89 ee             	mov    rsi,r13
+  4422f2:	6a 09                	push   0x9
+  4422f4:	58                   	pop    rax
+  4422f5:	0f 05                	syscall 
+  4422f7:	48 8b 54 24 18       	mov    rdx,QWORD PTR [rsp+0x18]
+  4422fc:	59                   	pop    rcx
+  4422fd:	51                   	push   rcx
+  4422fe:	48 01 c2             	add    rdx,rax
+  442301:	48 29 c8             	sub    rax,rcx
+  442304:	49 89 c4             	mov    r12,rax
+  442307:	48 01 e8             	add    rax,rbp
+  44230a:	50                   	push   rax
+  44230b:	48 25 00 f0 ff ff    	and    rax,0xfffffffffffff000
+  442311:	50                   	push   rax
+  442312:	48 29 c2             	sub    rdx,rax
+  442315:	52                   	push   rdx
+  442316:	48 89 de             	mov    rsi,rbx
+  442319:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  44231a:	50                   	push   rax
+  44231b:	48 89 e1             	mov    rcx,rsp
+  44231e:	4a 8d 14 23          	lea    rdx,[rbx+r12*1]
+  442322:	49 89 d5             	mov    r13,rdx
+  442325:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  442326:	50                   	push   rax
+  442327:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  442328:	41 90                	xchg   r8d,eax
+  44232a:	48 89 f7             	mov    rdi,rsi
+  44232d:	5e                   	pop    rsi
+  44232e:	ff d5                	call   rbp
+  442330:	59                   	pop    rcx
+  442331:	5e                   	pop    rsi
+  442332:	5f                   	pop    rdi
+  442333:	5d                   	pop    rbp
+  442334:	6a 05                	push   0x5
+  442336:	5a                   	pop    rdx
+  442337:	6a 0a                	push   0xa
+  442339:	58                   	pop    rax
+  44233a:	0f 05                	syscall 
+  44233c:	41 ff e5             	jmp    r13
+  44233f:	5d                   	pop    rbp
+  442340:	e8 40 ff ff ff       	call   0x442285
+  442345:	2f                   	(bad)  
+  442346:	70 72                	jo     0x4423ba
+  442348:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  442349:	63 2f                	movsxd ebp,DWORD PTR [rdi]
+  44234b:	73 65                	jae    0x4423b2
+  44234d:	6c                   	ins    BYTE PTR es:[rdi],dx
+  44234e:	66 2f                	data16 (bad) 
+  442350:	65 78 65             	gs js  0x4423b8
+  442353:	00 00                	add    BYTE PTR [rax],al
+  442355:	01 00                	add    DWORD PTR [rax],eax
+  442357:	00 b3 07 00 00 3e    	add    BYTE PTR [rbx+0x3e000007],dh
+  44235d:	06                   	(bad)  
+  44235e:	00 00                	add    BYTE PTR [rax],al
+  442360:	08 49 0a             	or     BYTE PTR [rcx+0xa],cl
+  442363:	00 ff                	add    bh,bh
+  442365:	ff                   	(bad)  
+  442366:	ff e6                	jmp    rsi
+  442368:	e8 4a 00 83 f9       	call   0xfffffffff9c723b7
+  44236d:	49 75 44             	rex.WB jne 0x4423b4
+  442370:	53                   	push   rbx
+  442371:	57                   	push   rdi
+  442372:	48 8d 4c 37 fd       	lea    rcx,[rdi+rsi*1-0x3]
+  442377:	5e                   	pop    rsi
+  442378:	56                   	push   rsi
+  442379:	5b                   	pop    rbx
+  44237a:	eb 2f                	jmp    0x4423ab
+  44237c:	48 39 ce             	cmp    rsi,rcx
+  44237f:	73 32                	jae    0x4423b3
+  442381:	56                   	push   rsi
+  442382:	5e                   	pop    rsi
+  442383:	bf fb ff ff ac       	mov    edi,0xacfffffb
+  442388:	3c 80                	cmp    al,0x80
+  44238a:	72 0a                	jb     0x442396
+  44238c:	3c 8f                	cmp    al,0x8f
+  44238e:	77 06                	ja     0x442396
+  442390:	80 7e fe 0f          	cmp    BYTE PTR [rsi-0x2],0xf
+  442394:	74 06                	je     0x44239c
+  442396:	2c e8                	sub    al,0xe8
+  442398:	3c 01                	cmp    al,0x1
+  44239a:	77 e4                	ja     0x442380
+  44239c:	37                   	(bad)  
+  44239d:	16                   	(bad)  
+  44239e:	56                   	push   rsi
+  44239f:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  4423a0:	28 d0                	sub    al,dl
+  4423a2:	75 ff                	jne    0x4423a3
+  4423a4:	ff                   	(bad)  
+  4423a5:	bb ff df 5f 0f       	mov    ebx,0xf5fdfff
+  4423aa:	c8 29 f8 01          	enter  0xf829,0x1
+  4423ae:	d8 ab 25 03 ac eb    	fsubr  DWORD PTR [rbx-0x1453fcdb]
+  4423b4:	df 5b c3             	fistp  WORD PTR [rbx-0x3d]
+  4423b7:	58                   	pop    rax
+  4423b8:	41 56                	push   r14
+  4423ba:	41 57                	push   r15
+  4423bc:	50                   	push   rax
+  4423bd:	48 89 e6             	mov    rsi,rsp
+  4423c0:	48 81 ec fb db ff db 	sub    rsp,0xffffffffdbffdbfb
+  4423c7:	00 10                	add    BYTE PTR [rax],dl
+  4423c9:	b2 54                	mov    dl,0x54
+  4423cb:	5f                   	pop    rdi
+  4423cc:	6a 0a                	push   0xa
+  4423ce:	59                   	pop    rcx
+  4423cf:	f3 48 a5             	rep movs QWORD PTR es:[rdi],QWORD PTR ds:[rsi]
+  4423d2:	48 83 3e 00          	cmp    QWORD PTR [rsi],0x0
+  4423d6:	0a 75 f8             	or     dh,BYTE PTR [rbp-0x8]
+  4423d9:	49 89 fe             	mov    r14,rdi
+  4423dc:	48 ab                	stos   QWORD PTR es:[rdi],rax
+  4423de:	19 df                	sbb    edi,ebx
+  4423e0:	9a                   	(bad)  
+  4423e1:	97                   	xchg   edi,eax
+  4423e2:	4d fc                	rex.WRB cld 
+  4423e4:	15 18 f6 ff 04       	adc    eax,0x4fff618
+  4423e9:	f5                   	cmc    
+  4423ea:	4d 29 fc             	sub    r12,r15
+  4423ed:	ba db ff 05 db       	mov    edx,0xdb05ffdb
+  4423f2:	ff 0f                	dec    DWORD PTR [rdi]
+  4423f4:	6e                   	outs   dx,BYTE PTR ds:[rsi]
+  4423f5:	57                   	push   rdi
+  4423f6:	5e                   	pop    rsi
+  4423f7:	18 7b ed             	sbb    BYTE PTR [rbx-0x13],bh
+  4423fa:	6a 59                	push   0x59
+  4423fc:	58                   	pop    rax
+  4423fd:	0f 05                	syscall 
+  4423ff:	85 c0                	test   eax,eax
+  442401:	79 05                	jns    0x442408
+  442403:	1c 6a                	sbb    al,0x6a
+  442405:	0f f6 ed             	psadbw mm5,mm5
+  442408:	db ff                	(bad)  
+  44240a:	58                   	pop    rax
+  44240b:	91                   	xchg   ecx,eax
+  44240c:	fd                   	std    
+  44240d:	49 8d 7d ff          	lea    rdi,[r13-0x1]
+  442411:	b0 00                	mov    al,0x0
+  442413:	aa                   	stos   BYTE PTR es:[rdi],al
+  442414:	34 74                	xor    al,0x74
+  442416:	0e                   	(bad)  
+  442417:	ff f3                	push   rbx
+  442419:	a4                   	movs   BYTE PTR es:[rdi],BYTE PTR ds:[rsi]
+  44241a:	76 ef                	jbe    0x44240b
+  44241c:	03 c7                	add    eax,edi
+  44241e:	07                   	(bad)  
+  44241f:	20 00                	and    BYTE PTR [rax],al
+  442421:	f3 ff                	repz (bad) 
+  442423:	bf b5 3d 70 3e       	mov    edi,0x3e703db5
+  442428:	18 e7                	sbb    bh,ah
+  44242a:	f8                   	clc    
+  44242b:	4c 89 f9             	mov    rcx,r15
+  44242e:	48 29 e1             	sub    rcx,rsp
+  442431:	89 c8                	mov    eax,ecx
+  442433:	31 f8                	xor    eax,edi
+  442435:	83 f0 08             	xor    eax,0x8
+  442438:	83 e0 08             	and    eax,0x8
+  44243b:	1b fc                	sbb    edi,esp
+  44243d:	d6                   	(bad)  
+  44243e:	5c                   	pop    rsp
+  44243f:	c7                   	(bad)  
+  442440:	df 4c 08 70          	fisttp WORD PTR [rax+rcx*1+0x70]
+  442444:	77 f8                	ja     0x44243e
+  442446:	48 c1 e9 03          	shr    rcx,0x3
+  44244a:	13 8d 67 1a fc b7    	adc    ecx,DWORD PTR [rbp-0x4803e599]
+  442450:	ff 08                	dec    DWORD PTR [rax]
+  442452:	fc                   	cld    
+  442453:	4b 8d 0c 26          	lea    rcx,[r14+r12*1]
+  442457:	8b 43 fc             	mov    eax,DWORD PTR [rbx-0x4]
+  44245a:	46 01 48 01          	rex.RX add DWORD PTR [rax+0x1],r9d
+  44245e:	c1 41 59 5e          	rol    DWORD PTR [rcx+0x59],0x5e
+  442462:	5f                   	pop    rdi
+  442463:	58                   	pop    rax
+  442464:	5f                   	pop    rdi
+  442465:	08 ef                	or     bh,ch
+  442467:	f7 b6 c0 ee 72 e2    	div    DWORD PTR [rsi-0x1d8d1140]
+  44246d:	50                   	push   rax
+  44246e:	66 e8 e8 50          	call   0x755a
+  442472:	05 16 81 c4 08       	add    eax,0x8c48116
+  442477:	25 b0 c1 ff ff       	and    eax,0xffffc1b0
+  44247c:	44 24 20             	rex.R and al,0x20
+  44247f:	5b                   	pop    rbx
+  442480:	45 29 c9             	sub    r9d,r9d
+  442483:	41 89 d8             	mov    r8d,ebx
+  442486:	6a 02                	push   0x2
+  442488:	41 5a                	pop    r10
+  44248a:	6a 01                	push   0x1
+  44248c:	5a                   	pop    rdx
+  44248d:	be b5 6a 00 50       	mov    esi,0x50006ab5
+  442492:	f0 7e 50             	lock jle 0x4424e5
+  442495:	b6 09                	mov    dh,0x9
+  442497:	3e 89 df             	ds mov edi,ebx
+  44249a:	6a 03                	push   0x3
+  44249c:	0c 5f                	or     al,0x5f
+  44249e:	44 0b f0             	or     r14d,eax
+  4424a1:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  4424a2:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  4424a3:	5f                   	pop    rdi
+  4424a4:	fa                   	cli    
+  4424a5:	ff 66 f8             	jmp    QWORD PTR [rsi-0x8]
+  4424a8:	b0 09                	mov    al,0x9
+  4424aa:	80 ca 0f             	or     dl,0xf
+  4424ad:	b6 c0                	mov    dh,0xc0
+  4424af:	24 48                	and    al,0x48
+  4424b1:	3d 00 f0 ff ff       	cmp    eax,0xfffff000
+  4424b6:	72 04                	jb     0x4424bc
+  4424b8:	79 9e                	jns    0x442458
+  4424ba:	f7 5f 02             	neg    DWORD PTR [rdi+0x2]
+  4424bd:	c8 ff c3 b0          	enter  0xc3ff,0xb0
+  4424c1:	3c eb                	cmp    al,0xeb
+  4424c3:	02 b0 0c 06 03 02    	add    dh,BYTE PTR [rax+0x203060c]
+  4424c9:	0b 86 8b 9f e7 0a    	or     eax,DWORD PTR [rsi+0xae79f8b]
+  4424cf:	01 00                	add    DWORD PTR [rax],eax
+  4424d1:	eb ce                	jmp    0x4424a1
+  4424d3:	0c 51                	or     al,0x51
+  4424d5:	8e 6b df             	mov    gs,WORD PTR [rbx-0x21]
+  4424d8:	5f                   	pop    rdi
+  4424d9:	f0 17                	lock (bad) 
+  4424db:	4c 8b 47 6e          	mov    r8,QWORD PTR [rdi+0x6e]
+  4424df:	8d 4a ff             	lea    ecx,[rdx-0x1]
+  4424e2:	73 0a                	jae    0x4424ee
+  4424e4:	bf 7f 24 e8 c5       	mov    edi,0xc5e8247f
+  4424e9:	80 ff 7e             	cmp    bh,0x7e
+  4424ec:	6e                   	outs   dx,BYTE PTR ds:[rsi]
+  4424ed:	7f 81                	jg     0x442470
+  4424ef:	7d f9                	jge    0x4424ea
+  4424f1:	ff 74 11 41          	push   QWORD PTR [rcx+rdx*1+0x41]
+  4424f5:	a6                   	cmps   BYTE PTR ds:[rsi],BYTE PTR es:[rdi]
+  4424f6:	16                   	(bad)  
+  4424f7:	ff c9                	dec    ecx
+  4424f9:	49 ff c0             	inc    r8
+  4424fc:	88 06                	mov    BYTE PTR [rsi],al
+  4424fe:	0e                   	(bad)  
+  4424ff:	c6                   	(bad)  
+  442500:	eb e9                	jmp    0x4424eb
+  442502:	db ed                	fucomi st,st(5)
+  442504:	0f 0a                	(bad)  
+  442506:	74 57                	je     0x44255f
+  442508:	c4                   	(bad)  
+  442509:	17                   	(bad)  
+  44250a:	58                   	pop    rax
+  44250b:	c3                   	ret    
+  44250c:	41 55                	push   r13
+  44250e:	e2 d5                	loop   0x4424e5
+  442510:	41 54                	push   r12
+  442512:	08 cc                	or     ah,cl
+  442514:	55                   	push   rbp
+  442515:	1d 2e b0 05 58       	sbb    eax,0x5805b02e
+  44251a:	fd                   	std    
+  44251b:	53                   	push   rbx
+  44251c:	06                   	(bad)  
+  44251d:	cc                   	int3   
+  44251e:	83 ec 28             	sub    esp,0x28
+  442521:	b5 0f                	mov    ch,0xf
+  442523:	de bb 3f dc 84 e6    	fidivr WORD PTR [rbx-0x197b23c1]
+  442529:	88 5e 24             	mov    BYTE PTR [rsi+0x24],bl
+  44252c:	10 ba 0c 13 89 ef    	adc    BYTE PTR [rdx-0x1076ecf4],bh
+  442532:	e8 96 a2 8b fd       	call   0xfffffffffdcfc7cd
+  442537:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  442538:	68 0b a4 10 8b       	push   0xffffffff8b10a40b
+  44253d:	28 14 b6             	sub    BYTE PTR [rsi+rsi*4],dl
+  442540:	75 15                	jne    0x442557
+  442542:	81 fe 0d 1d 19 72    	cmp    esi,0x72191d0d
+  442548:	75 11                	jne    0x44255b
+  44254a:	77 c1                	ja     0x44250d
+  44254c:	bf b7 5e 7d 00       	mov    edi,0x7d5eb7
+  442551:	60                   	(bad)  
+  442552:	b5 4c                	mov    ch,0x4c
+  442554:	eb 04                	jmp    0x44255a
+  442556:	85 f6                	test   esi,esi
+  442558:	75 01                	jne    0x44255b
+  44255a:	44 5c                	rex.R pop rsp
+  44255c:	db 0d ed ff 39 c6    	fisttp DWORD PTR [rip+0xffffffffc639ffed]        # 0xffffffffc67e254f
+  442562:	77 f2                	ja     0x442556
+  442564:	89 c2                	mov    edx,eax
+  442566:	48 3b 13             	cmp    rdx,QWORD PTR [rbx]
+  442569:	77 eb                	ja     0x442556
+  44256b:	14 48                	adc    al,0x48
+  44256d:	70 08                	jo     0x442577
+  44256f:	73 6c                	jae    0x4425dd
+  442571:	92                   	xchg   edx,eax
+  442572:	54                   	push   rsp
+  442573:	24 68                	and    al,0x68
+  442575:	af                   	scas   eax,DWORD PTR es:[rdi]
+  442576:	1d 6c fa 8b 7d       	sbb    eax,0x7d8bfa6c
+  44257b:	58                   	pop    rax
+  44257c:	4c 10 44 a0 18       	rex.WR adc BYTE PTR [rax+riz*4+0x18],r8b
+  442581:	24 c2                	and    al,0xc2
+  442583:	6c                   	ins    BYTE PTR es:[rdi],dx
+  442584:	76 dd                	jbe    0x442563
+  442586:	2b fe                	sub    edi,esi
+  442588:	d5                   	(bad)  
+  442589:	a4                   	movs   BYTE PTR es:[rdi],BYTE PTR ds:[rsi]
+  44258a:	c6                   	(bad)  
+  44258b:	bd 48 be 38 5c       	mov    ebp,0x5c38be48
+  442590:	75 b8                	jne    0x44254a
+  442592:	f8                   	clc    
+  442593:	f6 7f 13             	idiv   BYTE PTR [rdi+0x13]
+  442596:	6e                   	outs   dx,BYTE PTR ds:[rsi]
+  442597:	42 19 84 c9 0f 95 c2 	sbb    DWORD PTR [rcx+r9*8+0x31c2950f],eax
+  44259e:	31 
+  44259f:	c0 4d 85 e4          	ror    BYTE PTR [rbp-0x7b],0xe4
+  4425a3:	0e                   	(bad)  
+  4425a4:	c0 85 c2 74 1d cd de 	rol    BYTE PTR [rbp-0x32e28b3e],0xde
+  4425ab:	d0 6e ba             	shr    BYTE PTR [rsi-0x46],1
+  4425ae:	fe 00                	inc    BYTE PTR [rax]
+  4425b0:	02 be 77 4a 39 33    	add    bh,BYTE PTR [rsi+0x33394a77]
+  4425b6:	75 0f                	jne    0x4425c7
+  4425b8:	46 9c                	rex.RX pushf 
+  4425ba:	1a 29                	sbb    ch,BYTE PTR [rcx]
+  4425bc:	78 6d                	js     0x44262b
+  4425be:	6b 08 c9             	imul   ecx,DWORD PTR [rax],0xffffffc9
+  4425c1:	6a 7b                	push   0x7b
+  4425c3:	08 88 d4 80 14 bc    	or     BYTE PTR [rax-0x43eb7f2c],cl
+  4425c9:	45                   	rex.RB
+  4425ca:	f0 36 b8 e0 45 18 0d 	lock ss mov eax,0xd1845e0
+  4425d1:	89 f2                	mov    edx,esi
+  4425d3:	6e                   	outs   dx,BYTE PTR ds:[rsi]
+  4425d4:	04 c6                	add    al,0xc6
+  4425d6:	e8 db fe 9b 7d       	call   0x7de024b6
+  4425db:	5a                   	pop    rdx
+  4425dc:	77 74                	ja     0x442652
+  4425de:	54                   	push   rsp
+  4425df:	b7 03                	mov    bh,0x3
+  4425e1:	3a 53 d0             	cmp    dl,BYTE PTR [rbx-0x30]
+  4425e4:	48 dc 30             	rex.W fdiv QWORD PTR [rax]
+  4425e7:	03 e9                	add    ebp,ecx
+  4425e9:	7f d8                	jg     0x4425c3
+  4425eb:	ff 87 14 4b c4 28    	inc    DWORD PTR [rdi+0x28c44b14]
+  4425f1:	5b                   	pop    rbx
+  4425f2:	5d                   	pop    rbp
+  4425f3:	41 5c                	pop    r12
+  4425f5:	41 5d                	pop    r13
+  4425f7:	c3                   	ret    
+  4425f8:	2a 96 d1 74 36 0f    	sub    dl,BYTE PTR [rsi+0xf3674d1]
+  4425fe:	bf a2 fd 40 f6       	mov    edi,0xf640fda2
+  442603:	c7 01 75 30 5a 0f    	mov    DWORD PTR [rcx],0xf5a3075
+  442609:	74 f0                	je     0x4425fb
+  44260b:	4c 39 c1             	cmp    rcx,r8
+  44260e:	74 12                	je     0x442622
+  442610:	92                   	xchg   edx,eax
+  442611:	01 c7                	add    edi,eax
+  442613:	04 82                	add    al,0x82
+  442615:	c1 0f 94             	ror    DWORD PTR [rdi],0x94
+  442618:	0e                   	(bad)  
+  442619:	be 0d 08 66 f0       	mov    esi,0xf066080d
+  44261e:	26 7a 5b             	es jp  0x44267c
+  442621:	07                   	(bad)  
+  442622:	04 4f                	add    al,0x4f
+  442624:	08 64 c9 c0          	or     BYTE PTR [rcx+rcx*8-0x40],ah
+  442628:	3c c7                	cmp    al,0xc7
+  44262a:	10 eb                	adc    bl,ch
+  44262c:	d0 e1                	shl    cl,1
+  44262e:	21 3a                	and    DWORD PTR [rdx],edi
+  442630:	d8 9e 57 b8 f2 00    	fcomp  DWORD PTR [rsi+0xf2b857]
+  442636:	94                   	xchg   esp,eax
+  442637:	7a fb                	jp     0x442634
+  442639:	7f b8                	jg     0x4425f3
+  44263b:	83 b6 b1 fc 55 53 a4 	xor    DWORD PTR [rsi+0x5355fcb1],0xffffffa4
+  442642:	58                   	pop    rax
+  442643:	4c 03 67 20          	add    r12,QWORD PTR [rdi+0x20]
+  442647:	66 83 7f 10 fa       	cmp    WORD PTR [rdi+0x10],0xfffa
+  44264c:	70 60                	jo     0x4426ae
+  44264e:	77 41                	ja     0x442691
+  442650:	89 a4 20 b9 10 48 78 	mov    DWORD PTR [rax+riz*1+0x784810b9],esp
+  442657:	f3 b7 ff             	repz mov bh,0xff
+  44265a:	fb                   	sti    
+  44265b:	50                   	push   rax
+  44265c:	d6                   	(bad)  
+  44265d:	30 20                	xor    BYTE PTR [rax],ah
+  44265f:	2c 4c                	sub    al,0x4c
+  442661:	2e 10 0f             	adc    BYTE PTR cs:[rdi],cl
+  442664:	b7 57                	mov    bh,0x57
+  442666:	38 0f                	cmp    BYTE PTR [rdi],cl
+  442668:	44 c8 ec 84 24       	rex.R enter 0x84ec,0x24
+  44266d:	90                   	nop
+  44266e:	be e2 bf 7d 43       	mov    esi,0x437dbfe2
+  442673:	e6 76                	out    0x76,al
+  442675:	cd ff                	int    0xff
+  442677:	31 db                	xor    ebx,ebx
+  442679:	31 ff                	xor    edi,edi
+  44267b:	83 c1 22             	add    ecx,0x22
+  44267e:	be 00 ff ca 78       	mov    esi,0x78caff00
+  442683:	21 be a0 15 28 36    	and    DWORD PTR [rsi+0x362815a0],edi
+  442689:	30 16                	xor    BYTE PTR [rsi],dl
+  44268b:	42                   	rex.X
+  44268c:	46 94                	rex.RX xchg esp,eax
+  44268e:	39 e8                	cmp    eax,ebp
+  442690:	48 0f 42 e1          	cmovb  rsp,rcx
+  442694:	ed                   	in     eax,dx
+  442695:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  442696:	d8 06                	fadd   DWORD PTR [rsi]
+  442698:	03 46 60             	add    eax,DWORD PTR [rsi+0x60]
+  44269b:	39 c3                	cmp    ebx,eax
+  44269d:	14 d8                	adc    al,0xd8
+  44269f:	58                   	pop    rax
+  4426a0:	c6                   	(bad)  
+  4426a1:	38 eb                	cmp    bl,ch
+  4426a3:	db 4e ad             	fisttp DWORD PTR [rsi-0x53]
+  4426a6:	c0 a3 3c e5 79 c4 eb 	shl    BYTE PTR [rbx-0x3b861ac4],0xeb
+  4426ad:	12 c3                	adc    al,bl
+  4426af:	23 05 1f be 6b 0c    	and    eax,DWORD PTR [rip+0xc6bbe1f]        # 0xcafe4d4
+  4426b5:	e3 21                	jrcxz  0x4426d8
+  4426b7:	f6 c1 10             	test   cl,0x10
+  4426ba:	74 05                	je     0x4426c1
+  4426bc:	1c eb                	sbb    al,0xeb
+  4426be:	13 62 ed             	adc    esp,DWORD PTR [rdx-0x13]
+  4426c1:	30 74 34 d1          	xor    BYTE PTR [rsp+rsi*1-0x2f],dh
+  4426c5:	75 0e                	jne    0x4426d5
+  4426c7:	d8 bc c7 bc 10 ae 6f 	fdivr  DWORD PTR [rdi+rax*8+0x6fae10bc]
+  4426ce:	3f                   	(bad)  
+  4426cf:	44 ef                	rex.R out dx,eax
+  4426d1:	de 45 c8             	fiadd  WORD PTR [rbp-0x38]
+  4426d4:	45 31 48 d6          	xor    DWORD PTR [r8-0x2a],r9d
+  4426d8:	31 d2                	xor    edx,edx
+  4426da:	40 de e8             	rex fsubp st(0),st
+  4426dd:	74 fd                	je     0x4426dc
+  4426df:	08 4c 15 76          	or     BYTE PTR [rbp+rdx*1+0x76],cl
+  4426e3:	7c 38                	jl     0x44271d
+  4426e5:	3e 04 4a             	ds add al,0x4a
+  4426e8:	46 6d                	rex.RX ins DWORD PTR es:[rdi],dx
+  4426ea:	37                   	(bad)  
+  4426eb:	09 5a fb             	or     DWORD PTR [rdx-0x5],ebx
+  4426ee:	00 90 84 29 ed 66    	add    BYTE PTR [rax+0x66ed2984],dl
+  4426f4:	46 7e 38             	rex.RX jle 0x44272f
+  4426f7:	a0 2d 16 1c ad 4c 84 	movabs al,ds:0x646844cad1c162d
+  4426fe:	46 06 
+  442700:	e2 7c                	loop   0x44277e
+  442702:	6e                   	outs   dx,BYTE PTR ds:[rsi]
+  442703:	19 7e bb             	sbb    DWORD PTR [rsi-0x45],edi
+  442706:	7c 00                	jl     0x442708
+  442708:	74 23                	je     0x44272d
+  44270a:	2e 3c 24             	cs cmp al,0x24
+  44270d:	06                   	(bad)  
+  44270e:	75 1c                	jne    0x44272c
+  442710:	49 c5 26 20          	(bad)
+  442714:	be 03 70 f7 e1       	mov    esi,0xe1f77003
+  442719:	0d 7f 01 ea e8       	or     eax,0xe8ea017f
+  44271e:	ab                   	stos   DWORD PTR es:[rdi],eax
+  44271f:	f0 e9 04 54 45 d3    	lock jmp 0xffffffffd3897b29
+  442725:	3d 66 68 82 85       	cmp    eax,0x85826866
+  44272a:	8a 6b 4b             	mov    ch,BYTE PTR [rbx+0x4b]
+  44272d:	49 0e                	rex.WB (bad) 
+  44272f:	4c 0d ef 4f 6d 75    	rex.WR or rax,0x756d4fef
+  442735:	43 6d                	rex.XB ins DWORD PTR es:[rdi],dx
+  442737:	49 03 56 20          	add    rdx,QWORD PTR [r14+0x20]
+  44273b:	e8 70 74 49 24       	call   0x248d9bb0
+  442740:	56                   	push   rsi
+  442741:	b9 75 9c b2 38       	mov    ecx,0x38b29c75
+  442746:	35 ae a6 5c 27       	xor    eax,0x275ca6ae
+  44274b:	36 b0 87             	ss mov al,0x87
+  44274e:	52                   	push   rdx
+  44274f:	19 04 48             	sbb    DWORD PTR [rax+rcx*2],eax
+  442752:	71 41                	jno    0x442795
+  442754:	8b 75 7f             	mov    esi,DWORD PTR [rbp+0x7f]
+  442757:	60                   	(bad)  
+  442758:	d0 86 04 8d 6a 08    	rol    BYTE PTR [rsi+0x86a8d04],1
+  44275e:	40 62 51             	rex (bad) 
+  442761:	73 b1                	jae    0x442714
+  442763:	20 e0                	and    al,ah
+  442765:	1a 14 bc             	sbb    dl,BYTE PTR [rsp+rdi*4]
+  442768:	9c                   	pushf  
+  442769:	e8 83 e1 07 68       	call   0x684c08f1
+  44276e:	c5 6f 48             	(bad)
+  442771:	51                   	push   rcx
+  442772:	76 30                	jbe    0x4427a4
+  442774:	d8 df                	fcomp  st(7)
+  442776:	5e                   	pop    rsi
+  442777:	89 eb                	mov    ebx,ebp
+  442779:	c1 e1 02             	shl    ecx,0x2
+  44277c:	d3 6c 4a 34          	shr    DWORD PTR [rdx+rcx*2+0x34],cl
+  442780:	43 83 64 7d 83 d9    	and    DWORD PTR [r13+r15*2-0x7d],0xffffffd9
+  442786:	ce                   	(bad)  
+  442787:	12 42 58             	adc    al,BYTE PTR [rdx+0x58]
+  44278a:	40                   	rex
+  44278b:	48 70 dd             	rex.W jo 0x44276b
+  44278e:	4c 8d 3c 1a          	lea    r15,[rdx+rbx*1]
+  442792:	c1 c7 19             	rol    edi,0x19
+  442795:	bc 1c 04 24 b9       	mov    esp,0xb924041c
+  44279a:	32 f5                	xor    dh,ch
+  44279c:	62                   	(bad)  
+  44279d:	60                   	(bad)  
+  44279e:	d8 6b d8             	fsubr  DWORD PTR [rbx-0x28]
+  4427a1:	75 37                	jne    0x4427da
+  4427a3:	3a 75 07             	cmp    dh,BYTE PTR [rbp+0x7]
+  4427a6:	63 2c b1             	movsxd ebp,DWORD PTR [rcx+rsi*4]
+  4427a9:	12 b4 38 89 c1 a7 c8 	adc    dh,BYTE PTR [rax+rdi*1-0x37583e77]
+  4427b0:	7e 68                	jle    0x44281a
+  4427b2:	88 fe                	mov    dh,bh
+  4427b4:	a6                   	cmps   BYTE PTR ds:[rsi],BYTE PTR es:[rdi]
+  4427b5:	83 ca 02             	or     edx,0x2
+  4427b8:	3d 7a 2c 0f 59       	cmp    eax,0x590f2c7a
+  4427bd:	f0 e1 e8             	lock loope 0x4427a8
+  4427c0:	33 fc                	xor    edi,esp
+  4427c2:	80 39 c5             	cmp    BYTE PTR [rcx],0xc5
+  4427c5:	da cf                	fcmove st,st(7)
+  4427c7:	00 19                	add    BYTE PTR [rcx],bl
+  4427c9:	48 d0 a9 0d 06 3a ca 	rex.W shr BYTE PTR [rcx-0x35c5f9f3],1
+  4427d0:	3e 18 ab 40 9b e0 ed 	sbb    BYTE PTR ds:[rbx-0x121f64c0],ch
+  4427d7:	6e                   	outs   dx,BYTE PTR ds:[rsi]
+  4427d8:	81 30 e8 7b 52 84    	xor    DWORD PTR [rax],0x84527be8
+  4427de:	fb                   	sti    
+  4427df:	48 f7 db             	neg    rbx
+  4427e2:	13 f6                	adc    esi,esi
+  4427e4:	d6                   	(bad)  
+  4427e5:	db 8f ba fe 02 74    	fisttp DWORD PTR [rdi+0x7402feba]
+  4427eb:	0d 4a 8d 7c 02       	or     eax,0x27c8d4a
+  4427f0:	31 40 d9             	xor    DWORD PTR [rax-0x27],eax
+  4427f3:	fc                   	cld    
+  4427f4:	f3 aa                	rep stos BYTE PTR es:[rdi],al
+  4427f6:	b3 50                	mov    bl,0x50
+  4427f8:	70 b8                	jo     0x4427b2
+  4427fa:	dd 84 8c 99 b8 ff 00 	fld    QWORD PTR [rsp+rcx*4+0xffb899]
+  442801:	86 2c 23             	xchg   BYTE PTR [rbx+riz*1],ch
+  442804:	1a dc                	sbb    bl,ah
+  442806:	9c                   	pushf  
+  442807:	5b                   	pop    rbx
+  442808:	3e 48 ba 13 07 da d0 	ds movabs rdx,0x28dd5275d0da0713
+  44280f:	75 52 dd 28 
+  442813:	ed                   	in     eax,dx
+  442814:	62                   	(bad)  
+  442815:	f0 ca 08 64          	lock retf 0x6408
+  442819:	49 3b f0             	cmp    rsi,r8
+  44281c:	7e 32                	jle    0x442850
+  44281e:	90                   	nop
+  44281f:	0c 0c                	or     al,0xc
+  442821:	7f 70                	jg     0x442893
+  442823:	8b 28                	mov    ebp,DWORD PTR [rax]
+  442825:	d7                   	xlat   BYTE PTR ds:[rbx]
+  442826:	f7 d8                	neg    eax
+  442828:	25 d1 f8 03 77       	and    eax,0x7703f8d1
+  44282d:	0d ed 5d a2 d1       	or     eax,0xd1a25ded
+  442832:	b7 32                	mov    bh,0x32
+  442834:	4c                   	rex.WR
+  442835:	2e 0c 75             	cs or  al,0x75
+  442838:	1e                   	(bad)  
+  442839:	7a d2                	jp     0x44280d
+  44283b:	e0 5a                	loopne 0x442897
+  44283d:	6f                   	outs   dx,DWORD PTR ds:[rsi]
+  44283e:	c0 ed e1             	shr    ch,0xe1
+  442841:	c3                   	ret    
+  442842:	74 13                	je     0x442857
+  442844:	a5                   	movs   DWORD PTR es:[rdi],DWORD PTR ds:[rsi]
+  442845:	e4 ca                	in     al,0xca
+  442847:	31 f6                	xor    esi,esi
+  442849:	24 fe                	and    al,0xfe
+  44284b:	e8 f1 fc 0e 7b       	call   0x7b532541
+  442850:	82                   	(bad)  
+  442851:	4f                   	rex.WRXB
+  442852:	65 08 c3             	gs or  bl,al
+  442855:	e8 8a fb 1c 54       	call   0x546123e4
+  44285a:	60                   	(bad)  
+  44285b:	68 ef aa 74 b7       	push   0xffffffffb774aaef
+  442860:	68 1a 49 be 1f       	push   0x1fbe491a
+  442865:	5e                   	pop    rsi
+  442866:	1e                   	(bad)  
+  442867:	ce                   	(bad)  
+  442868:	0c df                	or     al,0xdf
+  44286a:	ac                   	lods   al,BYTE PTR ds:[rsi]
+  44286b:	3b 2c 24             	cmp    ebp,DWORD PTR [rsp]
+  44286e:	73 25                	jae    0x442895
+  442870:	40 0a 5b 90          	or     bl,BYTE PTR [rbx-0x70]
+  442874:	b0 7b                	mov    al,0x7b
+  442876:	b0 d8                	mov    al,0xd8
+  442878:	8e 34 24             	mov    ?,WORD PTR [rsp]
+  44287b:	0b 7b 75             	or     edi,DWORD PTR [rbx+0x75]
+  44287e:	24 fb                	and    al,0xfb
+  442880:	e0 02                	loopne 0x442884
+  442882:	3c fe                	cmp    al,0xfe
+  442884:	1d 75 c4 ff 9a       	sbb    eax,0x9affc475
+  442889:	18 b7 46 38 47 e4    	sbb    BYTE PTR [rdi-0x1bb8c7ba],dh
+  44288f:	f1                   	icebp  
+  442890:	bb 04 c4 38 39       	mov    ebx,0x3938c404
+  442895:	18 0f                	sbb    BYTE PTR [rdi],cl
+  442897:	8c ba d7 df 28 db    	mov    WORD PTR [rdx-0x24d72029],?
+  44289d:	ac                   	lods   al,BYTE PTR ds:[rsi]
+  44289e:	9a                   	(bad)  
+  44289f:	e1 4d                	loope  0x4428ee
+  4428a1:	03 6e 3c             	add    ebp,DWORD PTR [rsi+0x3c]
+  4428a4:	38 58 1d             	cmp    BYTE PTR [rax+0x1d],bl
+  4428a7:	1c e8                	sbb    al,0xe8
+  4428a9:	41 0c 69             	rex.B or al,0x69
+  4428ac:	d4                   	(bad)  
+  4428ad:	e9 74 5e 41 5f       	jmp    0x5f858726
+  4428b2:	ac                   	lods   al,BYTE PTR ds:[rsi]
+  4428b3:	a3 ce 46 b5 2b 1e e0 	movabs ds:0x4da6e01e2bb546ce,eax
+  4428ba:	a6 4d 
+  4428bc:	59                   	pop    rcx
+  4428bd:	d5                   	(bad)  
+  4428be:	46 6d                	rex.RX ins DWORD PTR es:[rdi],dx
+  4428c0:	40 53                	rex push rbx
+  4428c2:	44 c3                	rex.R ret 
+  4428c4:	35 a7 0b 3b ba       	xor    eax,0xba3b0ba7
+  4428c9:	7e 78                	jle    0x442943
+  4428cb:	7c 99                	jl     0x442866
+  4428cd:	08 28                	or     BYTE PTR [rax],ch
+  4428cf:	c5 c9 e1 bb 2e bc 24 	vpsraw xmm7,xmm6,XMMWORD PTR [rbx-0x7fdb43d2]
+  4428d6:	80 
+  4428d7:	f1                   	icebp  
+  4428d8:	74 05                	je     0x4428df
+  4428da:	bc b1 61 f6 16       	mov    esp,0x16f661b1
+  4428df:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  4428e0:	38 52 c2             	cmp    BYTE PTR [rdx-0x3e],dl
+  4428e3:	ff 30                	push   QWORD PTR [rax]
+  4428e5:	8b 47 04             	mov    eax,DWORD PTR [rdi+0x4]
+  4428e8:	28 4c 6a 0b          	sub    BYTE PTR [rdx+rbp*2+0xb],cl
+  4428ec:	de 5d 10             	ficomp WORD PTR [rbp+0x10]
+  4428ef:	83 c0 0c             	add    eax,0xc
+  4428f2:	21 10                	and    DWORD PTR [rax],edx
+  4428f4:	e8 f8 fa 02 41       	call   0x414723f1
+  4428f9:	53                   	push   rbx
+  4428fa:	aa                   	stos   BYTE PTR es:[rdi],al
+  4428fb:	e1 ed                	loope  0x4428ea
+  4428fd:	79 b5                	jns    0x4428b4
+  4428ff:	26 f8                	es clc 
+  442901:	c6                   	(bad)  
+  442902:	d8 4e f1             	fmul   DWORD PTR [rsi-0xf]
+  442905:	65 6e                	outs   dx,BYTE PTR gs:[rsi]
+  442907:	28 ea                	sub    dl,ch
+  442909:	e8 70 6b df 87       	call   0xffffffff8823947e
+  44290e:	2c 06                	sub    al,0x6
+  442910:	be 09 9b c2 32       	mov    esi,0x32c29b09
+  442915:	f7 3e                	idiv   DWORD PTR [rsi]
+  442917:	c4                   	(bad)  
+  442918:	e8 da 30 99 aa       	call   0xffffffffaadd59f7
+  44291d:	7e 98                	jle    0x4428b7
+  44291f:	41 59                	pop    r9
+  442921:	41 5a                	pop    r10
+  442923:	9a                   	(bad)  
+  442924:	7d 14                	jge    0x44293a
+  442926:	3d dc 00 ab 8a       	cmp    eax,0x8aab00dc
+  44292b:	38 8f ed 0e 03 75    	cmp    BYTE PTR [rdi+0x75030eed],cl
+  442931:	72 b7                	jb     0x4428ea
+  442933:	c1 16 55             	rcl    DWORD PTR [rsi],0x55
+  442936:	02 3f                	add    bh,BYTE PTR [rdi]
+  442938:	7e 7d                	jle    0x4429b7
+  44293a:	10 9c 90 e8 4c b8 a6 	adc    BYTE PTR [rax+rdx*4-0x5947b318],bl
+  442941:	ee                   	out    dx,al
+  442942:	0b 0c 6a             	or     ecx,DWORD PTR [rdx+rbp*2]
+  442945:	4a 78 17             	rex.WX js 0x44295f
+  442948:	ba 00 04 8d ee       	mov    edx,0xee8d0400
+  44294d:	ae                   	scas   al,BYTE PTR es:[rdi]
+  44294e:	cf                   	iret   
+  44294f:	61                   	(bad)  
+  442950:	70 df                	jo     0x442931
+  442952:	e8 47 28 48 3d       	call   0x3d8c519e
+  442957:	1f                   	(bad)  
+  442958:	9d                   	popf   
+  442959:	19 fa                	sbb    edx,edi
+  44295b:	c7                   	(bad)  
+  44295c:	1f                   	(bad)  
+  44295d:	b4 c3                	mov    ah,0xc3
+  44295f:	af                   	scas   eax,DWORD PTR es:[rdi]
+  442960:	07                   	(bad)  
+  442961:	77 50                	ja     0x4429b3
+  442963:	84 04 c0             	test   BYTE PTR [rax+rax*8],al
+  442966:	d8 57 89             	fcom   DWORD PTR [rdi-0x77]
+  442969:	da dc                	fcmovu st,st(4)
+  44296b:	1d 1e 16 16 80       	sbb    eax,0x8016161e
+  442970:	a5                   	movs   DWORD PTR es:[rdi],DWORD PTR ds:[rsi]
+  442971:	db 8b 17 be 41 0e    	fisttp DWORD PTR [rbx+0xe41be17]
+  442977:	db bf 0b 0d 53 24    	fstp   TBYTE PTR [rdi+0x24530d0b]
+  44297d:	89 df                	mov    edi,ebx
+  44297f:	e8 e8 f9 0c 5e       	call   0x5e51236c
+  442984:	5f                   	pop    rdi
+  442985:	af                   	scas   eax,DWORD PTR es:[rdi]
+  442986:	01 8e 3c 0d ac 45    	add    DWORD PTR [rsi+0x45ac0d3c],ecx
+  44298c:	c5 82 71             	(bad)
+  44298f:	ad                   	lods   eax,DWORD PTR ds:[rsi]
+  442990:	78 48                	js     0x4429da
+  442992:	80 36 48             	xor    BYTE PTR [rsi],0x48
+  442995:	5a                   	pop    rdx
+  442996:	e0 b3                	loopne 0x44294b
+  442998:	8f 49 92 24          	(bad)
+  44299c:	49 00 00             	rex.WB add BYTE PTR [r8],al
+  44299f:	00 50 ff             	add    BYTE PTR [rax-0x1],dl
